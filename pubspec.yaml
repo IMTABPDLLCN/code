@@ -29,6 +29,11 @@ flutter:
   assets:
     - assets/images/TravelBod.png
     - assets/images/fond_ecran.jpg
+    - assets/images/google.png
+    - assets/images/facebook.png
+    - assets/images/Image.jpeg
+    - assets/images/TravelBuddyLogo.png
+    - assets/images/Paris.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
