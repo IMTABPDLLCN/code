@@ -16,21 +16,58 @@ class MenuPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.purpleAccent,
       ),
-      body: new Material(
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new DrawerHeader(
+              child: new Text('Hi Basile I hope you enjoy TravelBuddy'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Visites'),
+              onTap: () => print('Tu as clic'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Be a TravelBuddy'),
+              onTap: () => print('Tu as clic'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Search a TravelBuddy'),
+              onTap: () => print('Tu as clic'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Message'),
+              onTap: () => print('Tu as clic'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Profil'),
+              onTap: () => print('Tu as clic'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add_circle_outline),
+              title: new Text('Paramètres'),
+              onTap: () => print('Tu as clic'),
+            ),
+          ],
+        ),
+      ),
+      body: new Container(
+          decoration: new BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/Image.jpeg'),
+                  fit: BoxFit.cover)),
           child: new Column(
-        children: <Widget>[
-          new MenuButton('Visites'),
-          new MenuButton('Be a TravelBuddy'),
-          new MenuButton('Search a TravelBuddy'),
-          new MenuButton('Messages'),
-          new MenuButton('Profil'),
-          new MenuButton('Parametre'),
-          new Container(
-            child: Image.asset('assets/images/fond_ecran.jpg'),
-          ),
-          )
-        ],
-      )),
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              new MenuButton('Be a TravelBuddy'),
+              new MenuButton('Search a TravelBuddy'),
+            ],
+          )),
     );
   }
 }

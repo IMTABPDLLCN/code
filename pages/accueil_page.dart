@@ -29,11 +29,7 @@ class AccueilPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Container(
-                  child: new Image.asset('assets/images/TravelBod.png'),
-                  decoration: new BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
+                  child: new Image.asset('assets/images/TravelBuddyLogo.png'),
                 ), 
                 new Text(
                   "Hi, welcome of on the TravelBuddy world !",

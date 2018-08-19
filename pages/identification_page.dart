@@ -9,70 +9,105 @@ class IdentificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(
-          "TravelBuddy",
-          style: TextStyle(
-              color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.bold),
+        appBar: new AppBar(
+          title: new Text(
+            "TravelBuddy",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 50.0,
+                fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.purpleAccent,
         ),
-        centerTitle: true,
-        backgroundColor: Colors.purpleAccent,
-      ),
-      body: new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          new Row(
+        body: new Container(
+          decoration: new BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/Paris.jpg'),
+                  fit: BoxFit.cover)),
+          child: new Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Container(
-                  child: new Column(
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  new IconButton(
-                    onPressed: () => print('Tu as pressé sur Icon1'),
-                    icon: Icon(Icons.accessible),
+                  new InkWell(
+                    onTap: () => print('Tu as pressé sur Facebook'),
+                    child: new Column(
+                      children: <Widget>[
+                        new Container(
+                          child: Image.asset(
+                            'assets/images/facebook.png',
+                            width: 50.0,
+                            height: 50.0,
+                          ),
+                        ),
+                        new Text('Facebook')
+                      ],
+                    ),
                   ),
-                  new Text('Facbebook')
+                  new InkWell(
+                    //splashColor: Colors.white,
+                    onTap: () => print('Tu as pressé sur Google'),
+                    child: new Column(
+                      children: <Widget>[
+                        new Container(
+                          child: Image.asset(
+                            'assets/images/google.png',
+                            width: 50.0,
+                            height: 50.0,
+                          ),
+                        ),
+                        new Text('Google')
+                      ],
+                    ),
+                  ),
                 ],
-              )),
+              ),
               new Container(
-                  child: new Column(
-                children: <Widget>[
-                  new IconButton(
-                    onPressed: () => print('Tu as pressé sur Icon2'),
-                    icon: Icon(Icons.arrow_forward),
+                child: new TextField(),
+              ),
+              new Container(
+                child: new TextField(),
+              ),
+              new Container(
+                  decoration: new BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey,
                   ),
-                  new Text('Google')
+                  child: new IconButton(
+                    iconSize: 60.0,
+                    color: Colors.white,
+                    onPressed: () => Navigator.of(context).push(
+                        new MaterialPageRoute(
+                            builder: (BuildContext context) => new MenuPage())),
+                    icon: Icon(
+                      Icons.done,
+                    ),
+                  )),
+              new Container(
+                  child: new ButtonBar(
+                alignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  new RaisedButton(
+                      onPressed: () =>
+                          print('Tu as pressé sur Mot de passe oublié'),
+                      color: Colors.grey,
+                      child: new Text(
+                        'Mot de passe oublié',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  new RaisedButton(
+                      onPressed: () => print('Tu as pressé sur Sign in'),
+                      color: Colors.grey,
+                      child: new Text(
+                        'Sign in',
+                        style: TextStyle(color: Colors.white),
+                      )),
                 ],
-              )),
+              ))
             ],
           ),
-          new Container(
-            child: new TextField(),
-          ),
-          new Container(
-            child: new TextField(),
-          ),
-          new Container(
-              child: new IconButton(
-            onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new MenuPage())),
-            icon: Icon(Icons.arrow_right),
-          )),
-          new Container(
-              child: new ButtonBar(
-            alignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              new InkWell(
-                  onTap: () => print('Tu as pressé sur la tapbar'),
-                  child: new Text('Mot de passe oublier')),
-              new InkWell(
-                onTap: () => print('Tu as pressé sur sinscrire'),
-                child: new Text('Sinscrire'),
-              )
-            ],
-          ))
-        ],
-      ),
-    );
+        ));
   }
 }
