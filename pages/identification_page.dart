@@ -73,7 +73,7 @@ class IdentificationPage extends StatelessWidget {
               new Container(
                   decoration: new BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.grey,
+                    color: Colors.purpleAccent,
                   ),
                   child: new IconButton(
                     iconSize: 60.0,
@@ -89,21 +89,27 @@ class IdentificationPage extends StatelessWidget {
                   child: new ButtonBar(
                 alignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  new RaisedButton(
-                      onPressed: () =>
-                          print('Tu as pressé sur Mot de passe oublié'),
-                      color: Colors.grey,
-                      child: new Text(
-                        'Mot de passe oublié',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  new RaisedButton(
-                      onPressed: () => print('Tu as pressé sur Sign in'),
-                      color: Colors.grey,
-                      child: new Text(
-                        'Sign in',
-                        style: TextStyle(color: Colors.white),
-                      )),
+                  new Material(
+                    borderRadius: BorderRadius.circular(45.0),
+                    child: new RaisedButton(
+                        onPressed: () =>
+                            print('Tu as pressé sur Mot de passe oublié'),
+                        color: Colors.redAccent,
+                        child: new Text(
+                          'Mot de passe oublié',
+                          style: TextStyle(color: Colors.white),
+                        )),
+                  ),
+                  new Material(
+                    borderRadius: BorderRadius.circular(45.0),
+                    child: new RaisedButton(
+                        onPressed: () => print('Tu as pressé sur Sign in'),
+                        color: Colors.purpleAccent,
+                        child: new Text(
+                          'Sign in',
+                          style: TextStyle(color: Colors.white),
+                        )),
+                  )
                 ],
               ))
             ],

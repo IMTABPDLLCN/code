@@ -20,35 +20,50 @@ class AccueilPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.purpleAccent,
         ),
-        backgroundColor: Colors.purpleAccent,
-        body: new Material(
-          color: Colors.white,
+        body: new Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/Image.jpeg'))),
           child: new InkWell(
-            onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new IdentificationPage() )),
+            onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new IdentificationPage())),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 new Container(
-                  child: new Image.asset('assets/images/TravelBuddyLogo.png'),
-                ), 
-                new Text(
-                  "Hi, welcome of on the TravelBuddy world !",
+                  child: new Image.asset(
+                    'assets/images/TravelBuddyLogo.png',
+                    height: 92.0,
+                    width: 92.0,
+                  ),
+                ),
+                new Material(
+                  color: Colors.purpleAccent,
+                  borderRadius: BorderRadius.circular(45.0),
+                  child: new Text(
+                    "Hi, welcome of on the TravelBuddy world !",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                new Material( 
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(45.0),
+                  child:new Text(
+                  " "+" Press to start ..."+" ",
                   style: TextStyle(
-                      color: Colors.purpleAccent,
+                      color: Colors.white,
                       fontSize: 30.0,
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                ),
-                new Text(
-                  "Now you're a member of this big familly so you can share and discover with some other TravelBuddy.",
-                  style: TextStyle(
-                      color: Colors.purpleAccent,
-                      fontSize: 20.0,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                )
+                  textAlign: TextAlign.center,
+                ) ,)
+                
               ],
             ),
           ),

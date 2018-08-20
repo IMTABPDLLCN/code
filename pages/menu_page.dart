@@ -64,8 +64,16 @@ class MenuPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new MenuButton('Be a TravelBuddy'),
-              new MenuButton('Search a TravelBuddy'),
+              new Material(
+                color: Colors.redAccent,
+                borderRadius: BorderRadius.circular(45.0),
+                child: new MenuButton('Be a TravelBuddy'),
+              ),
+              new Material(
+                color: Colors.purpleAccent,
+                borderRadius: BorderRadius.circular(45.0),
+                child: new MenuButton('Search a TravelBuddy'),
+              ),
             ],
           )),
     );
