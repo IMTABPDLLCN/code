@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Utils/cust_bar.dart';
 import '../../Utils/menu_button.dart';
+import '../../Utils/app_localisation.dart';
 
 class LocalisationPage extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class LocalisationPage extends StatelessWidget {
     return new Scaffold(
         appBar: PreferredSize(
           preferredSize: new Size(20.0, 60.0),
-          child: new CustBar("Be a TravelBuddy",20.0),
+          child: new CustBar("Be a TravelBuddy",25.0),
         ),
         body: new Container(
           decoration: new BoxDecoration(
@@ -26,7 +27,7 @@ class LocalisationPage extends StatelessWidget {
               new Material(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Se Localiser',null),
+                child: new AppLocalisation()
               ),
               new Material(
                 color: Colors.purpleAccent,
