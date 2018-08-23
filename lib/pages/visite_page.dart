@@ -11,7 +11,7 @@ class VisitePage extends StatelessWidget {
     return new Scaffold(
       appBar: PreferredSize(
         preferredSize: new Size(20.0, 60.0),
-        child: new CustBar(),
+        child: new CustBar("Visits",30.0),
       ),
       drawer: new CustDrawer(),
       body: new Container(
@@ -26,12 +26,12 @@ class VisitePage extends StatelessWidget {
               new Material(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Old Visites'),
+                child: new MenuButton('Old Visites',null)
               ),
               new Material(
                 color: Colors.purpleAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Visites to come'),
+                child: new MenuButton('Visites to come',null),
               ),
             ],
           )),

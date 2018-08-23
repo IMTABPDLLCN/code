@@ -13,7 +13,7 @@ class AccueilPage extends StatelessWidget {
         //Main de la Page
         appBar: PreferredSize(
           preferredSize: new Size(20.0, 60.0),
-          child: new CustBar(),
+          child: new CustBar("TravelBuddy",30.0),
         ),
         //Barre de l'application
         body: new Container(

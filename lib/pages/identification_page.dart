@@ -11,7 +11,7 @@ class IdentificationPage extends StatelessWidget {
     return new Scaffold(
         appBar: PreferredSize(
           preferredSize: new Size(20.0, 60.0),
-          child: new CustBar(),
+          child: new CustBar("TravelBuddy",30.0),
         ),
         body: new Container(
           decoration: new BoxDecoration(

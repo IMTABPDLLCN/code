@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
+  
   final String text;
+  final MaterialPageRoute page;
 
-  MenuButton(this.text);
+  MenuButton(this.text,this.page);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Row(children: <Widget>[
       new InkWell(
-        onTap: () => print("tu as pressé sur " + text),
+        onTap: () =>  (page!=null) ? Navigator.of(context).push(page) : print("pas encore de page"+text),
         child: new Container(
             child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

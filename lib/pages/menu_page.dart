@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/be_travelbuddy/localisation_page.dart';
+
 import '../Utils/menu_button.dart';
 import '../Utils/cust_drawer.dart';
 import '../Utils/cust_bar.dart';
@@ -11,7 +13,7 @@ class MenuPage extends StatelessWidget {
     return new Scaffold(
       appBar: PreferredSize(
         preferredSize: new Size(20.0, 60.0),
-        child: new CustBar(),
+        child: new CustBar("TravelBuddy",30.0),
       ),
       drawer: new CustDrawer(),
       body: new Container(
@@ -26,15 +28,20 @@ class MenuPage extends StatelessWidget {
               new Material(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Be a TravelBuddy'),
+                child: new MenuButton('Be a TravelBuddy', new MaterialPageRoute(
+                  builder: (BuildContext context) => new LocalisationPage())
+                ),
               ),
               new Material(
                 color: Colors.purpleAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Search a TravelBuddy'),
+                child: new MenuButton('Search a TravelBuddy',new MaterialPageRoute(
+                  builder: (BuildContext context) => new LocalisationPage()),
+                ),
               ),
             ],
-          )),
+          )
+        ),
     );
   }
 }

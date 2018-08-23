@@ -11,7 +11,7 @@ class LocalisationPage extends StatelessWidget {
     return new Scaffold(
         appBar: PreferredSize(
           preferredSize: new Size(20.0, 60.0),
-          child: new CustBar(),
+          child: new CustBar("Be a TravelBuddy",20.0),
         ),
         body: new Container(
           decoration: new BoxDecoration(
@@ -26,12 +26,12 @@ class LocalisationPage extends StatelessWidget {
               new Material(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Se Localiser'),
+                child: new MenuButton('Se Localiser',null),
               ),
               new Material(
                 color: Colors.purpleAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Choisir une ville'),
+                child: new MenuButton('Choisir une ville',null),
               ),
             ],
           )        
