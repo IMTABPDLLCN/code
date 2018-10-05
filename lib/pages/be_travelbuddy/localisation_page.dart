@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Utils/cust_bar.dart';
 import '../../Utils/menu_button.dart';
-import '../../Utils/app_localisation.dart';
+import '../../Utils/test.dart';
 
 class LocalisationPage extends StatelessWidget {
 
@@ -24,10 +24,10 @@ class LocalisationPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Material(
+              new Material(q
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
-                child: new AppLocalisation()
+                child: new LocationStreamWidget()
               ),
               new Material(
                 color: Colors.purpleAccent,

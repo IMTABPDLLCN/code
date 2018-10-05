@@ -1,75 +1,83 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:geolocation/geolocation.dart';
+import 'package:geolocator/geolocator.dart';
 
-class AppLocalisation extends StatefulWidget {
+import './text_affichage.dart';
+
+class LocationStreamWidget extends StatefulWidget {
   @override
-  AppLocalisationState createState() => AppLocalisationState();
-
+  State<LocationStreamWidget> createState() => LocationStreamState();
 }
 
-class AppLocalisationState extends State<AppLocalisation> {
-  LocationResult locations;
-  StreamSubscription<LocationResult> streamSubscription;
-  bool trackLocation = false;
+class LocationStreamState extends State<LocationStreamWidget> {
+
+  StreamSubscription<Position> _positionStreamSubscription;
+  Position _position;
+
+ void _toggleListening() {
+    if (_positionStreamSubscription == null) {
+      final LocationOptions locationOptions = const LocationOptions(
+          accuracy: LocationAccuracy.best, distanceFilter: 10);
+      final Stream<Position> positionStream =
+          Geolocator().getPositionStream(locationOptions);
+      _positionStreamSubscription = positionStream
+          .listen((position) => setState(() => _position=position));
+      _positionStreamSubscription.pause();
+    }
+
+    setState(() {
+      if (_positionStreamSubscription.isPaused) {
+        _positionStreamSubscription.resume();
+      } else {
+        _positionStreamSubscription.pause();
+      }
+    });
+  }
 
   @override
-  initState() {
-    super.initState();
-    checkGps();
-
-    trackLocation = false;
-    locations = null;
-  }
-
-  getLocations() {
-    if (trackLocation) {
-      setState(() => trackLocation = false);
-      streamSubscription.cancel();
-      streamSubscription = null;
-      locations = null;
-    } else {
-      setState(() => trackLocation = true);
-
-      streamSubscription = Geolocation
-          .locationUpdates(
-        accuracy: LocationAccuracy.best,
-        displacementFilter: 0.0,
-        inBackground: false,
-      )
-          .listen((result) {
-        final location = result;
-        setState(() {
-          locations = location;
-        });
-      });
-
-      streamSubscription.onDone(() => setState(() {
-            trackLocation = false;
-          }));
+  void dispose() {
+    if (_positionStreamSubscription != null) {
+      _positionStreamSubscription.cancel();
+      _positionStreamSubscription = null;
     }
-    print("latitude: "+locations.location.latitude.toString());
-    print("longitude: "+locations.location.longitude.toString());
-    
+    super.dispose();
   }
 
-  checkGps() async {
-    final GeolocationResult result = await Geolocation.isLocationOperational();
-    if (result.isSuccessful) {
-      print("Success");
-    } else {
-      print("Failed");
-    }
-  }
+  
+  
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-            child: Text("Get Location"),
-            onPressed: getLocations,
-          );
+    return FutureBuilder(
+        future: Geolocator().checkGeolocationPermissionStatus(),
+        builder:
+            (BuildContext context, AsyncSnapshot<GeolocationStatus> snapshot) {
+          if (!snapshot.hasData) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (snapshot.data == GeolocationStatus.denied) {
+            return TextAffichage(Colors.black,"Location services disabled, Enable location services for this App using the device settings.",15.0);
+          }
+
+          return _buildPosView();
+        });
   }
-}
+
+  Widget _buildPosView() {
+    Widget bouton;
+
+    bouton=new RaisedButton(
+      child: Text("Press to get position"),
+      color: Colors.black,
+      onPressed: _toggleListening,
+    );
+
+    return bouton;
+  }
 
   
+  
+
+}
