@@ -24,7 +24,7 @@ class LocalisationPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Material(q
+              new Material(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(45.0),
                 child: new LocationStreamWidget()

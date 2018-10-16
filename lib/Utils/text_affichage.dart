@@ -5,6 +5,7 @@ class TextAffichage extends StatelessWidget {
   final Color color;
   final String text;
   final double size;
+  
 
   TextAffichage(this.color, this.text, this.size);
 
