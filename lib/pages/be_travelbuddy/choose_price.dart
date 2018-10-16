@@ -5,7 +5,7 @@ import '../../Utils/cust_drawer.dart';
 import '../../Utils/text_affichage.dart';
 import '../../Utils/text_input.dart';
 
-class ChooseActivityPage extends StatelessWidget {
+class ChoosePricePage extends StatelessWidget {
 
 
   Widget build(BuildContext context) {

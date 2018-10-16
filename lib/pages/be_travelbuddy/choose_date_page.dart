@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../Utils/cust_bar.dart';
 import '../../Utils/cust_drawer.dart';
 import '../../Utils/text_affichage.dart';
+import '../../Utils/text_input.dart';
 
 class ChooseDatePage extends StatelessWidget {
 
@@ -25,11 +26,11 @@ class ChooseDatePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new TextAffichage(Colors.white,"When do you want to be a travel buddy ?", 20.0),
-              new TextAffichage(Colors.pink, "From", 10.0),
-              new TextField(),
-              new TextAffichage(Colors.pink,"To", 10.0),
-              new TextField(),  
+              new TextAffichage(Colors.red,"When do you want to be a travel buddy ?", 28.0),
+              new TextAffichage(Colors.black, "From", 20.0),
+              new TextInput(),
+              new TextAffichage(Colors.black,"To", 20.0),
+              new TextInput(),  
               ],)
         )
       );

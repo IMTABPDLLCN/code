@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../pages/be_travelbuddy/localisation_page.dart';
+import '../pages/be_travelbuddy/choose_date_page.dart';
 
 import '../Utils/menu_button.dart';
 import '../Utils/cust_drawer.dart';
@@ -36,7 +37,7 @@ class MenuPage extends StatelessWidget {
                 color: Colors.purpleAccent,
                 borderRadius: BorderRadius.circular(45.0),
                 child: new MenuButton('Search a TravelBuddy',new MaterialPageRoute(
-                  builder: (BuildContext context) => new LocalisationPage()),
+                  builder: (BuildContext context) => new ChooseDatePage()),
                 ),
               ),
             ],
