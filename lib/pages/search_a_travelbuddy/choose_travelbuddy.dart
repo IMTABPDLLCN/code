@@ -5,7 +5,7 @@ import '../../Utils/cust_drawer.dart';
 import '../../Utils/text_affichage.dart';
 import '../../Utils/text_input.dart';
 
-class ChooseDatePage extends StatelessWidget {
+class ChooseTravelBuddyPage extends StatelessWidget {
 
 
   Widget build(BuildContext context) {
@@ -26,11 +26,9 @@ class ChooseDatePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new TextAffichage(Colors.red,"When do you want to be a travel buddy ?", 28.0),
-              new TextAffichage(Colors.black, "From ?", 20.0),
+              new TextAffichage(Colors.red,"Where do you want to meet a travelBuddy ?", 28.0),
               new TextInput(),
-              new TextAffichage(Colors.black,"To ?", 20.0),
-              new TextInput(),  
+              new TextAffichage(Colors.red, "Choose a travelBuddy in the list below", 20.0)
               ],)
         )
       );
