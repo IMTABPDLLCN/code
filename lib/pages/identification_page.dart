@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../Utils/cust_bar.dart';
+import '../Utils/done_button.dart';
+
 
 import './menu_page.dart';
 
@@ -62,21 +64,10 @@ class IdentificationPage extends StatelessWidget {
               new Container(
                 child: new TextField(),
               ),
-              new Container(
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.purpleAccent,
-                  ),
-                  child: new IconButton(
-                    iconSize: 60.0,
-                    color: Colors.white,
-                    onPressed: () => Navigator.of(context).push(
-                        new MaterialPageRoute(
-                            builder: (BuildContext context) => new MenuPage())),
-                    icon: Icon(
-                      Icons.done,
-                    ),
-                  )),
+              DoneButton(new MaterialPageRoute(
+                builder: (BuildContext context) => new MenuPage()
+              )
+              ),            
               new Container(
                   child: new ButtonBar(
                 alignment: MainAxisAlignment.spaceAround,

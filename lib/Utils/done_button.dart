@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class DoneButton extends StatelessWidget {
 
   final MaterialPageRoute page;
-  final double buttonsize;
+  
 
-  DoneButton(this.page, this.buttonsize);
+  DoneButton(this.page,);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class DoneButton extends StatelessWidget {
         color: Colors.red
       ),
       child: new IconButton(
-        iconSize: this.buttonsize,
+        iconSize: 65.0,
         color: Colors.white,
         icon: Icon(Icons.done),
         onPressed: () => Navigator.of(context).push(this.page),

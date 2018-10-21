@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import './choose_date_page.dart';
+
 import '../../Utils/cust_bar.dart';
-import '../../Utils/menu_button.dart';
-import '../../Utils/test.dart';
+import '../../Utils/localisation.dart';
+import '../../Utils/done_button.dart';
+
 
 class LocalisationPage extends StatelessWidget {
 
@@ -16,7 +19,7 @@ class LocalisationPage extends StatelessWidget {
         ),
         body: new Container(
           decoration: new BoxDecoration(
-              image: DecorationImage(
+            image: DecorationImage(
                   image: AssetImage('assets/images/Image.jpeg'),
                   fit: BoxFit.cover)
           ),
@@ -24,18 +27,12 @@ class LocalisationPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Material(
-                color: Colors.redAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new LocationStreamWidget()
-              ),
-              new Material(
-                color: Colors.purpleAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Choisir une ville',null),
-              ),
+              new CurrentLocationWidget(),
+              new DoneButton(new MaterialPageRoute(
+                builder: (BuildContext context) => new ChooseDatePage()
+              ))
             ],
-          )        
+          )
         )
     );
   }
