@@ -5,6 +5,8 @@ import './choose_date_page.dart';
 import '../../Utils/cust_bar.dart';
 import '../../Utils/localisation.dart';
 import '../../Utils/done_button.dart';
+import '../../Utils/text_affichage.dart';
+import '../../Utils/text_input.dart';
 
 
 class LocalisationPage extends StatelessWidget {
