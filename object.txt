@@ -1,0 +1,30 @@
+Objet visite
+Attribut:
+Ville
+Date
+Prix
+Note
+Activité
+Etat (en attente, selectionné, en cours, fini)
+Guide
+Touristes 
+Nb touristes max
+Méthode: Setter/getter
+
+Objet avis:
+Attribut:
+Note
+Commentaire
+Type (visite/personne)
+
+Objet Personne
+Attribut:
+Nom
+Prénom
+Age
+Ville
+ListeVisites
+Note moyenne
+
+
+

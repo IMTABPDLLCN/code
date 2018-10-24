@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../pages/visite_page.dart';
 import '../pages/be_travelbuddy/localisation_page.dart';
+import '../pages/search_a_travelbuddy/choose_travelbuddy.dart';
 
 class CustDrawer extends StatelessWidget {
   @override
@@ -28,7 +29,8 @@ class CustDrawer extends StatelessWidget {
           new ListTile(
             leading: new Icon(Icons.add_circle_outline),
             title: new Text('Search a TravelBuddy'),
-            onTap: () => print('Tu as clic'),
+            onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new ChooseTravelBuddyPage())),
           ),
           new ListTile(
             leading: new Icon(Icons.add_circle_outline),

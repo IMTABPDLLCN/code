@@ -13,12 +13,12 @@ class TextAffichage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Material(
-      color: color,
+      color: Colors.white,
       borderRadius: BorderRadius.circular(45.0),
       child: new Text(
         text,
         style: TextStyle(
-            color: Colors.white,
+            color: this.color,
             fontSize: size,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold),

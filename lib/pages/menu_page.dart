@@ -26,20 +26,9 @@ class MenuPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Material(
-                color: Colors.redAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Be a TravelBuddy', new MaterialPageRoute(
-                  builder: (BuildContext context) => new LocalisationPage())
-                ),
-              ),
-              new Material(
-                color: Colors.purpleAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Search a TravelBuddy',new MaterialPageRoute(
-                  builder: (BuildContext context) => new ChooseDatePage()),
-                ),
-              ),
+              new MenuButton('Visites',null,Colors.red),
+              new MenuButton('Be a TravelBuudy',null, Colors.red),
+              new MenuButton('Search a TravelBuudy',null, Colors.red)
             ],
           )
         ),

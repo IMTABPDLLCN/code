@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Utils/cust_bar.dart';
 import '../Utils/done_button.dart';
+import '../Utils/text_affichage.dart';
 
 
 import './menu_page.dart';
@@ -33,11 +34,11 @@ class IdentificationPage extends StatelessWidget {
                         new Container(
                           child: Image.asset(
                             'assets/images/facebook.png',
-                            width: 50.0,
-                            height: 50.0,
+                            width: 80.0,
+                            height: 80.0,
                           ),
                         ),
-                        new Text('Facebook')
+                        new TextAffichage(Colors.black,'Connect using Facebook',16.0),
                       ],
                     ),
                   ),
@@ -48,21 +49,15 @@ class IdentificationPage extends StatelessWidget {
                         new Container(
                           child: Image.asset(
                             'assets/images/google.png',
-                            width: 50.0,
-                            height: 50.0,
+                            width: 80.0,
+                            height: 80.0,
                           ),
                         ),
-                        new Text('Google')
+                        new TextAffichage(Colors.black,'Connect using Google',16.0),
                       ],
                     ),
                   ),
                 ],
-              ),
-              new Container(
-                child: new TextField(),
-              ),
-              new Container(
-                child: new TextField(),
               ),
               DoneButton(new MaterialPageRoute(
                 builder: (BuildContext context) => new MenuPage()

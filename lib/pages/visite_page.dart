@@ -23,16 +23,8 @@ class VisitePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Material(
-                color: Colors.redAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Old Visites',null)
-              ),
-              new Material(
-                color: Colors.purpleAccent,
-                borderRadius: BorderRadius.circular(45.0),
-                child: new MenuButton('Visites to come',null),
-              ),
+              new MenuButton('Visits to come', null, Colors.red),
+              new MenuButton('Old visits', null, Colors.red),
             ],
           )),
     );

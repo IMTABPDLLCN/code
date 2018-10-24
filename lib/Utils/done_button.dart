@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './text_affichage.dart';
+
 class DoneButton extends StatelessWidget {
 
   final MaterialPageRoute page;
@@ -16,11 +18,17 @@ class DoneButton extends StatelessWidget {
         shape: BoxShape.circle,
         color: Colors.red
       ),
-      child: new IconButton(
-        iconSize: 65.0,
-        color: Colors.white,
-        icon: Icon(Icons.done),
-        onPressed: () => Navigator.of(context).push(this.page),
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          new IconButton(
+            iconSize: 65.0,
+            color: Colors.white,
+            icon: Icon(Icons.done),
+            onPressed: () => Navigator.of(context).push(this.page),
+          ),
+          new TextAffichage(Colors.black,'Next Page',15.0)
+        ],
       )
     );
 

@@ -26,7 +26,7 @@ class ChoosePricePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new TextAffichage(Colors.white,"what kind of activity do you propose to do ?", 20.0),
+              new TextAffichage(Colors.white,"How much would ypu charge ?", 20.0),
               new TextInput(), 
               ],)
         )
