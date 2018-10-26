@@ -4,6 +4,9 @@ import '../../Utils/cust_bar.dart';
 import '../../Utils/cust_drawer.dart';
 import '../../Utils/text_affichage.dart';
 import '../../Utils/text_input.dart';
+import '../../Utils/done_button.dart';
+
+import './recap_page.dart';
 
 class ChooseActivityPage extends StatelessWidget {
 
@@ -26,8 +29,9 @@ class ChooseActivityPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new TextAffichage(Colors.white,"what kind of activity do you propose to do ?", 20.0),
-              new TextInput(), 
+              new TextAffichage(Colors.black,"what kind of activity do you propose to do ?", 20.0),
+              new TextInput(),
+              new DoneButton(new MaterialPageRoute(builder: (BuildContext context) => new RecapPage()))
               ],)
         )
       );

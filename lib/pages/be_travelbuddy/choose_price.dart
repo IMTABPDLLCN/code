@@ -4,6 +4,9 @@ import '../../Utils/cust_bar.dart';
 import '../../Utils/cust_drawer.dart';
 import '../../Utils/text_affichage.dart';
 import '../../Utils/text_input.dart';
+import '../../Utils/done_button.dart';
+
+import './choose_activity_page.dart';
 
 class ChoosePricePage extends StatelessWidget {
 
@@ -26,12 +29,13 @@ class ChoosePricePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new TextAffichage(Colors.white,"How much would ypu charge ?", 20.0),
-              new TextInput(), 
-              ],)
+              new TextAffichage(Colors.black,"How much would you charge ?", 20.0),
+              new TextInput(),
+              new DoneButton(new MaterialPageRoute(builder: (BuildContext context) => new ChooseActivityPage())) 
+              ],
         )
-      );
-
+      )
+    );
     return page;
 
   }
