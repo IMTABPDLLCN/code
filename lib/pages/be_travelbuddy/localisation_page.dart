@@ -8,6 +8,8 @@ import '../../Utils/done_button.dart';
 import '../../Utils/text_affichage.dart';
 import '../../Utils/text_input.dart';
 
+import '../../object/visite.dart';
+
 
 class LocalisationPage extends StatelessWidget {
 
